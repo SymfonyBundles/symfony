@@ -1,0 +1,3 @@
+[submodule "vendor/symfony-bundler"]
+	path = vendor/symfony-bundler
+	url = git@github.com:SymfonyBundles/SymfonyBundler.git
