@@ -2,3 +2,5 @@
 /vendor_full/
 /app/cache/*
 /app/logs/*
+/.settings/
+/.project
