@@ -168,7 +168,14 @@ public function <methodName>()
      */
     public function writeDocumentClass(ClassMetadataInfo $metadata, $outputDirectory)
     {
-        $path = $outputDirectory . '/' . str_replace('\\', DIRECTORY_SEPARATOR, $metadata->name) . $this->extension;
+        
+        if (strcmp(substr($metadata->name, 0, 4),'App\\') === 0) {
+            $str = substr($metadata->name,4, strlen($metadata->name));
+            $path = $outputDirectory . '/' . str_replace('\\', DIRECTORY_SEPARATOR, $str) . $this->extension;
+        }else{
+            $path = $outputDirectory . '/' . str_replace('\\', DIRECTORY_SEPARATOR, $metadata->name) . $this->extension;
+        }
+        
         $dir = dirname($path);
 
         if ( ! is_dir($dir)) {
